@@ -3,20 +3,24 @@
  */
 (function ($) {
     var privateFun = function () {
-        
-    }
+
+    };
     var PageSwitch=(function () {
-        function PageSwich(element,options){
-            this.setting= $.extend(true, $.fn.PageSwitch.default,options||{});
+        console.log(0)
+        function PageSwitch(element,options){
+            console.log(1)
+            this.setting= $.extend(true,$.fn.PageSwitch.default,options||{});
             this.element=element;
+
         }
-        PageSwich.prototype={
+        PageSwitch.prototype={
             init: function () {
 
             }
         }
-        return PageSwich;
+        return PageSwitch;
     })();
+
     $.fn.PageSwitch= function (options) {
         return this.each(function () {
             var me=$(this),
@@ -28,7 +32,8 @@
             if($.type(options==="string")) return instance[options]();
         });
     }
-    $.fn.PageSwich.default={
+    
+    $.fn.PageSwitch.default={
         selectors:{
             sections:".sections",
             section:".section",
